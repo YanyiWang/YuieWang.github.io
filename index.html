@@ -1,0 +1,141 @@
+<!--This is my portfolio wesite landing page-->
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="stylesheet.css">
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+<script type="text/javascript"></script>
+</head>
+
+<body background=""><!--This is the background image-->
+<div class="main">
+<h1>Yuie Wang</h1>
+<hr>
+<h2>PORTFOLIO</h2>
+<!--This are the nav buttons-->
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> All</button>
+  <button class="btn" onclick="filterSelection('nature')"> UIUX</button>
+  <button class="btn" onclick="filterSelection('cars')"> Visual Art</button>
+  <button class="btn" onclick="filterSelection('people')"> People</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+
+<div class="row">
+  <div class="column cars">
+    <a style="display:block; text-decoration: none" href="photodt.html" target="_self">
+    <div class="content">
+      <img src="p2.png" alt="Mountains" style="width:100%" %" width="300px" height="200px">
+      <h4 style="color:black;text-align:center; text-decoration-line:none;">Photography DT</h4>
+      <!--<p>Photoshoped/Sony a7II</p>-->
+    </div>
+  </a>
+  </div>
+
+
+
+  <div class="column cars">
+    <a style="display:block; text-decoration: none" href="photo.html" target="_self">
+      <div class="content">
+        <img src="O8.JPG" alt="Lights" style="width:100%" %" width="300px" height="200px">
+        <h4 style="color:black;text-align:center; text-decoration-line:none;">Oil Paintings</h4>
+    </div>
+  </a>
+  </div>
+
+
+  <div class="column nature">
+<a style="display:block; text-decoration: none" href="courseaid.html" target="_self">
+      <div class="content" >
+        <img src="dogs.jpg" alt="Nature" style="width:100%" width="300px" height="200px" >
+        <h4 style="color:black;text-align:center; text-decoration-line:none;">CourseAid App</h4>
+    </div>
+  </a>
+  </div>
+</div>
+  
+  <div class="row">
+  <div class="column nature">
+      <a style="display:block; text-decoration: none" href="mus.html" target="_self">
+      <div class="content">
+        <img src="webpic.png" alt="Car" style="width:100%"  width="300px" height="300px" >
+        <h4 style="color:black;text-align:center; text-decoration-line:none;">MuShaker App</h4>
+    </div>
+  </a>
+  </div>
+  <div class="column nature">
+       <a style="display:block; text-decoration: none" href="visualdesign.html" target="_self">
+      <div class="content">
+        <img src="poster.png" alt="Car" style="width:100%" width="300px" height="300px"  >
+        <h4 style="color:black;text-align:center; text-decoration-line:none;">Visual Designs</h4>
+    </div>
+  </a>
+  </div>
+  <div class="column cars">
+        <a style="display:block; text-decoration: none" href="photosd.html" target="_self">
+      <div class="content">
+        <img src="final 2.png" alt="Car" style="width:100%" >
+        <h4 style="color:black;text-align:center; text-decoration-line:none;">Photography SD</h4>
+    </div>
+  </a>
+  </div>
+</div>
+
+
+<!-- END GRID -->
+</div>
+  
+
+</div>
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+
+
+</body>
+</html>
