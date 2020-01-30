@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" href="stylesheet.css">
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
+<script type="text/javascript"></script>
+</head>
+
+<body background=""><!--This is the background image-->
+<div class="main">
+<h1>Yuie Wang</h1>
+<hr>
+<h2>PORTFOLIO</h2>
+<!--This are the nav buttons-->
+<div id="myBtnContainer">
+   <button class="btn" onclick="goBack()">Go Back</button>
+  <button class="btn" onclick="window.location.href='as.html'"  target="_self"> Art Statement</button>
+
+  <div class = "main" align="center" style="width: 600px">
+    <h3>Art Statement</h3>
+   <p class = "as"> There are different ways of seeing the world. It could be complex and detailed, simple and minimal. Big detailed pictures are interesting to look at since they contain more informations. Small and simple pictures are also revealing a world with pure structure and saturated color. I like to work on both style and introduce different perspectives of world. Ordinary things all have their unique aesthetic value, it just need a different angle to look at. Lines and composition is something I obsessed with, simple lines are powerful. Horizontal and vertical lines are simple but strong in a picture. Composition of regular lines give me a pleasant feeling. By photographing I understand that, minimalism only make sense when the subject matter is better present in minimalism styling.  Content and message is more important than the aesthetic value.
+The message in a picture can not only show people the beauty of places, the feeling and emotion of an artist, but also the culture and history. Modern art and classical art are different in forms, but they both conveying the feeling and story that people did not notice in their life. These art teach me that as an artist no matter what style you use to photograph, the most important thing is to find the beauty and story that others can not see. </p>
+ 
+
+     </div>
+
+</div>
+
+</div>
+
+
+
+<!-- END GRID -->
+</div>
+  
+
+</div>
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+function goBack() {
+  window.history.back()
+}
+</script>
+
+
+
+</body>
+</html>

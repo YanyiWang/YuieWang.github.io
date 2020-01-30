@@ -26,6 +26,14 @@ h1 {
   padding: 8px;
 }
 
+.as { color: #685206;
+ font-family: 'Helvetica Neue', sans-serif; 
+ font-size: 14px;
+  line-height: 24px;
+   margin: 0 0 24px;
+    text-align: justify; 
+    text-justify: inter-word; }
+    
 /* Create three equal columns that floats next to each other */
 .column {
   float: left;
