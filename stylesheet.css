@@ -49,6 +49,9 @@ h1 {
 
 }
 
+.indent {
+  text-indent: 30px;
+}
 .content:hover {
   background-color: #ddd;
 }
